@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
@@ -27,6 +28,7 @@
             <Label fx:id="plon" layoutX="181.0" layoutY="192.0" text="Label" />
             <Label layoutX="295.0" layoutY="111.0" prefHeight="17.0" prefWidth="132.0" text="temperatura" />
             <Label fx:id="temp_real" layoutX="441.0" layoutY="111.0" prefHeight="17.0" prefWidth="59.0" text="Label" />
+            <ImageView fx:id="ImagePogodaIcon" fitHeight="150.0" fitWidth="200.0" layoutX="284.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true" />
          </children>
     </AnchorPane>
   </children>

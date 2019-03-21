@@ -7,7 +7,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -44,6 +47,9 @@ public class RootController implements Initializable {
     @FXML
     private Label temp_real;
 
+    @FXML
+    private ImageView ImagePogodaIcon;
+
     public void initialize(URL location, ResourceBundle resources) {
 
         city.setText("Podaj nazwę Miasta");
@@ -52,7 +58,7 @@ public class RootController implements Initializable {
 
     }
 
-    public void setCity(){
+    public void setCity() throws MalformedURLException {
 
         SerwisPogody serwisPogody = new SerwisPogody();
         Pogoda pogoda = serwisPogody.getCityPogoda(city.getText());
@@ -63,5 +69,7 @@ public class RootController implements Initializable {
         plon.setText(String.valueOf(pogoda.getLocation().getLon())+degress);
         localTimeCity.setText(pogoda.getLocation().getLocaltime());
         temp_real.setText(String.valueOf(pogoda.getCurrent().getTemp_c())+degresC);
+        URL imageIcon = new URL("Https:"+pogoda.getCurrent().getCondition().getIcon());
+        ImagePogodaIcon.setImage(new Image(String.valueOf(imageIcon)));
     }
 }
